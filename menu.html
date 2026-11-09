@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lovora Coffee | Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --forest: #0f3d2e;
+    --green: #166534;
+    --sage: #4c956c;
+    --mint: #88d5ba;
+    --mist: #e6f2ea;
+    --paper: #f9fcf8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--forest);
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* HEADER (same as flavors page) */
+
+.site-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 17px 61px;
+    background: var(--forest);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    height: 64px;
+}
+
+.site-header.hide { transform: translateY(-100%); }
+
+.site-header .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
+    text-decoration: none;
+    justify-self: start;
+    padding-bottom: 10px;
+}
+
+.nav-links {
+    
+    display: flex;
+    gap: 25px;
+    padding-bottom: 10px;
+    
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.nav-links a:hover,
+.nav-links a.active { opacity: .75; }
+
+.header-btn {
+    justify-self: end;
+    background: #f7faf6;
+    color: var(--forest);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 9px 10px;
+    border-radius: 999px;
+    text-decoration: none;
+    
+    margin-bottom: 3px;
+}
+
+/* HERO */
+
+.hero {
+    
+    text-align: center;
+    padding: 48px 20px 34px;
+    background: linear-gradient(#e6f2ea, #f9fcf8);
+}
+
+.hero span {
+    color: var(--sage);
+    letter-spacing: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.hero p {
+    color: #718078;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* FILTERS */
+
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 25px 80px;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter {
+    background: white;
+    border: 1px solid #dce8de;
+    color: #65766b;
+    border-radius: 30px;
+    padding: 9px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter:hover,
+.filter.active {
+    background: var(--forest);
+    color: white;
+    border-color: var(--forest);
+}
+
+.search {
+    padding: 13px 18px;
+    border: 1px solid #dce8de;
+    border-radius: 30px;
+    outline: none;
+    font-size: 13px;
+}
+
+/* DRINK CARDS */
+
+.drink-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.drink-card[hidden] { display: none !important; }
+
+.drink-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #edf1ed;
+    box-shadow: 0 8px 25px rgba(15,61,46,0.05);
+    transition: 0.3s;
+}
+
+.drink-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(15,61,46,0.12);
+}
+
+.drink-image {
+    height: 270px;
+    background: #edf5ed;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drink-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.drink-info { padding: 20px; }
+
+.tag {
+    color: var(--sage);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.drink-info h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    margin: 8px 0;
+}
+
+.drink-info p {
+    color: #718078;
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 43px;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.add-btn {
+    background: var(--mist);
+    color: var(--forest);
+    border: none;
+    padding: 11px 17px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.add-btn:hover {
+    background: var(--forest);
+    color: white;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    color: #718078;
+}
+
+/* CART */
+
+.cart-bar {
+    background: var(--mist);
+    color: var(--forest);
+    padding: 20px 61px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid #d3e5d9;
+}
+
+.cart-bar strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.cart-bar p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #4f6b5c;
+}
+
+.cart-bar button,
+.checkout-btn {
+    background: var(--forest);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.cart-bar button:hover,
+.checkout-btn:hover { background: var(--green); }
+
+.cart-panel {
+    display: none;
+    background: white;
+    padding: 25px;
+    margin: 20px 61px;
+    border: 1px solid #dce9df;
+    border-radius: 20px;
+}
+
+.cart-panel h2 {
+    font-family: 'Fraunces', serif;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5eee7;
+}
+
+.cart-item button {
+    border: none;
+    background: var(--mist);
+    padding: 7px 11px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-size: 18px;
+}
+
+.checkout-btn { width: 100%; }
+
+/* FOOTER */
+
+.site-footer {
+    background: var(--forest);
+    color: #dcebe2;
+    padding: 48px 61px 0;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.footer-logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-brand p {
+    margin: 12px 0 0;
+    max-width: 280px;
+    line-height: 1.7;
+    font-size: 15px;
+    color: #b8d8c5;
+}
+
+.footer-col h3 {
+    margin: 0 0 18px;
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.footer-col a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 12px;
+    color: #dcebe2;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.footer-col a:hover { color: var(--mint); }
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 52px auto 0;
+    padding: 22px 0 26px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: #9cc4ae;
+}
+
+.menu-container { scroll-margin-top: 90px; }
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .site-header {
+        grid-template-columns: 1fr auto;
+        padding: 14px 20px;
+        gap: 10px;
+    }
+
+    .nav-links {
+        grid-column: 1 / -1;
+        order: 3;
+        justify-content: space-between;
+        gap: 12px;
+        overflow-x: auto;
+    }
+
+    .nav-links a { font-size: 14px; }
+    .site-header .logo { font-size: 22px; }
+    .header-btn { font-size: 14px; padding: 9px 16px; }
+}
+
+@media (max-width: 800px) {
+    .cart-bar { padding: 18px 20px; }
+    .cart-panel { margin: 20px; }
+
+    .site-footer { padding: 48px 20px 0; }
+
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px 24px;
+    }
+
+    .footer-brand { grid-column: 1 / -1; }
+}
+
+@media(max-width:850px) {
+    .drink-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width:550px) {
+    .hero h1 { font-size: 28px; }
+    .drink-grid { grid-template-columns: 1fr; }
+    .drink-image { height: 250px; }
+    .toolbar { flex-direction: column; }
+    .search { width: 100%; }
+    .cart-item { flex-wrap: wrap; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+    <a href="loader.html" class="logo">Lovora</a>
+
+    <nav class="nav-links">
+        <a href="loader.html">Home</a>
+        <a href="flavors.html">Flavors</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="our-story.html">Our story</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="flavors.html" class="header-btn">Explore flavors</a>
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+    <span>MENU</span>
+    <h1>Coffee, frappes and refreshers</h1>
+    <p>
+        Everything we serve, with prices in Rs.
+    </p>
+</section>
+
+<!-- MENU -->
+
+<main class="menu-container">
+
+    <div class="toolbar">
+
+        <div class="filters">
+            <button class="filter active" data-filter="all">All drinks</button>
+            <button class="filter" data-filter="coffee">Coffee</button>
+            <button class="filter" data-filter="frappe">Frappes</button>
+            <button class="filter" data-filter="refreshers">Refreshers</button>
+        </div>
+
+        <input
+            type="search"
+            class="search"
+            id="search"
+            placeholder="Search your favorite drink..."
+        >
+
+    </div>
+
+    <div class="drink-grid" id="drinkGrid">
+
+        <!-- 1 MATCHA -->
+
+        <div class="drink-card"
+             data-category="frappe"
+             data-name="matcha frappe">
+
+            <div class="drink-image">
+                <img loading="lazy" src="lovora-cups/lovora-matcha.png"
+                     alt="Matcha Frappe">
+            </div>
+
+            <div class="drink-info">
+                <span class="tag">Green & Creamy</span>
+                <h2>Matcha Frappe</h2>
+                <p>Earthy matcha blended into a cool creamy treat.</p>
+
+                <div class="card-bottom">
+                    <span class="price">Rs 950</span>
+                    <button class="add-btn"
+                        onclick="addToCart('Matcha Frappe',950)">
+                        Add to Cart +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2 MINT MOCHA -->
+
+        <div class="drink-card"
+             data-category="coffee frappe"
+             data-name="mint mocha">
+
+            <div class="drink-image">
+                <img loading="lazy" src="lovora-cups/lovora-mint-mocha.png"
+                     alt="Mint Mocha">
+            </div>
+
+            <div class="drink-info">
+                <span class="tag">Chocolate & Mint</span>
+                <h2>Mint Mocha</h2>
+                <p>A refreshing mint twist with rich chocolate coffee.</p>
+
+                <div class="card-bottom">
+                    <span class="price">Rs 900</span>
+                    <button class="add-btn"
+                        onclick="addToCart('Mint Mocha',900)">
+                        Add to Cart +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 CARAMEL CLOUD -->
+
+        <div class="drink-card"
+             data-category="coffee frappe"
+             data-name="caramel cloud">
+
+            <div class="drink-image">
+                <img loading="lazy" src="lovora-cups/lovora-caramel-cloud.png"
+                     alt="Caramel Cloud">
+            </div>
+
+            <div class="drink-info">
+                <span class="tag">Sweet & Silky</span>
+                <h2>Caramel Cloud</h2>
+                <p>Velvety coffee with a buttery caramel finish.</p>
+
+                <div class="card-bottom">
+                    <span class="price">Rs 950</span>
+                    <button class="add-btn"
+                        onclick="addToCart('Caramel Cloud',950)">
+                        Add to Cart +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 COLD BREW -->
+
+        <div class="drink-card"
+             data-category="coffee"
+             data-name="cold brew cream">
+
+            <div class="drink-image">
+                <img loading="lazy" src="lovora-cups/lovora-cold-brew.png"
+                     alt="Cold Brew Cream">
+            </div>
+
+            <div class="drink-info">
+                <span class="tag">Smooth & Bold</span>
+                <h2>Cold Brew Cream</h2>
+                <p>Slow-steeped coffee with a soft creamy layer.</p>
+
+                <div class="card-bottom">
+                    <span class="price">Rs 850</span>
+                    <button class="add-btn"
+                        onclick="addToCart('Cold Brew Cream',850)">
+                        Add to Cart +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 VANILLA LATTE -->
+
+        <div class="drink-card"
+             data-category="coffee"
+             data-name="vanilla velvet latte">
+
+            <div class="drink-image">
+                <img loading="lazy" src="lovora-cups/vanilla-velvet-latte.webp"
+                     alt="Vanilla Velvet Latte">
+            </div>
+
+            <div class="drink-info">
+                <span class="tag">Soft & Aromatic</span>
+                <h2>Vanilla Velvet Latte</h2>
+                <p>A comforting latte with delicate vanilla sweetness.</p>
+
+                <div class="card-bottom">
+                    <span class="price">Rs 800</span>
+                    <button class="add-btn"
+                        onclick="addToCart('Vanilla Velvet Latte',800)">
+                        Add to Cart +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 HAZELNUT -->
+
+        <div class="drink-card"
+             data-category="coffee frappe"
+             data-name="chocolate hazelnut">
+
+            <div class="drink-image">
+                <img loading="lazy" src="lovora-cups/chocolate-hazelnut.webp"
+                     alt="Chocolate Hazelnut">
+            </div>
+
+            <div class="drink-info">
+                <span class="tag">Nutty & Rich</span>
+                <h2>Chocolate Hazelnut</h2>
+                <p>Rich chocolate blended with hazelnut flavor.</p>
+
+                <div class="card-bottom">
+                    <span class="price">Rs 950</span>
+                    <button class="add-btn"
+                        onclick="addToCart('Chocolate Hazelnut',950)">
+                        Add to Cart +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 STRAWBERRY BREEZE -->
+
+        <div class="drink-card"
+             data-category="refreshers frappe"
+             data-name="strawberry breeze">
+
+            <div class="drink-image">
+                <img loading="lazy" src="lovora-cups/strawberry-breeze.webp"
+                     alt="Strawberry Breeze">
+            </div>
+
+            <div class="drink-info">
+                <span class="tag">Fruity & Fresh</span>
+                <h2>Strawberry Breeze</h2>
+                <p>A sweet strawberry sip with a refreshing finish.</p>
+
+                <div class="card-bottom">
+                    <span class="price">Rs 750</span>
+                    <button class="add-btn"
+                        onclick="addToCart('Strawberry Breeze',750)">
+                        Add to Cart +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8 CITRUS MINT -->
+
+        <div class="drink-card"
+             data-category="refreshers"
+             data-name="citrus mint cooler">
+
+            <div class="drink-image">
+                <img loading="lazy" src="lovora-cups/citrus-mint-cooler.webp"
+                     alt="Citrus Mint Cooler">
+            </div>
+
+            <div class="drink-info">
+                <span class="tag">Zesty & Cooling</span>
+                <h2>Citrus Mint Cooler</h2>
+                <p>A lively citrus blend with fresh mint notes.</p>
+
+                <div class="card-bottom">
+                    <span class="price">Rs 700</span>
+                    <button class="add-btn"
+                        onclick="addToCart('Citrus Mint Cooler',700)">
+                        Add to Cart +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9 STRAWBERRY MATCHA -->
+
+        <div class="drink-card"
+             data-category="frappe refreshers"
+             data-name="strawberry matcha">
+
+            <div class="drink-image">
+                <img loading="lazy" src="lovora-cups/strawberry-matcha.webp"
+                     alt="Strawberry Matcha">
+            </div>
+
+            <div class="drink-info">
+                <span class="tag">Berry & Earthy</span>
+                <h2>Strawberry Matcha</h2>
+                <p>Fresh strawberry sweetness meets mellow matcha.</p>
+
+                <div class="card-bottom">
+                    <span class="price">Rs 1,000</span>
+                    <button class="add-btn"
+                        onclick="addToCart('Strawberry Matcha',1000)">
+                        Add to Cart +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- CART BAR -->
+
+<div class="cart-bar">
+
+    <div>
+        <strong>Your Lovora Cart</strong>
+        <p id="cartCount">0 items · Rs. 0</p>
+    </div>
+
+    <button onclick="toggleCart()">View Cart</button>
+
+</div>
+
+<!-- CART PANEL -->
+
+<div class="cart-panel" id="cartPanel">
+
+    <h2>Your Order</h2>
+
+    <div id="cartItems">
+        Your cart is empty.
+    </div>
+
+    <div class="cart-total">
+        <strong>Total</strong>
+        <strong id="cartTotal">Rs. 0</strong>
+    </div>
+
+    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+            <a href="loader.html" class="footer-logo">Lovora</a>
+            <p>Coffee, frappes and refreshers.</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Explore</h3>
+            <a href="loader.html">Home</a>
+            <a href="flavors.html">Flavors</a>
+            <a href="menu.html">Menu</a>
+            <a href="loader.html#story">Our story</a>
+            <a href="loader.html#contact">Contact</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Our drinks</h3>
+            <a href="#" data-go="coffee">Coffee</a>
+            <a href="#" data-go="frappe">Frappes</a>
+            <a href="#" data-go="refreshers">Refreshers</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© <span id="year"></span> Lovora Coffee. All rights reserved.</span>
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// FILTER FUNCTIONALITY
+
+let activeFilter = "all";
+
+const filterButtons = document.querySelectorAll(".filter");
+const drinkCards = document.querySelectorAll(".drink-card");
+const searchInput = document.getElementById("search");
+
+function filterCards() {
+
+    const searchText = searchInput.value.toLowerCase().trim();
+
+    drinkCards.forEach(card => {
+
+        const categories = card.dataset.category.split(" ");
+        const name = card.dataset.name.toLowerCase();
+
+        const categoryMatch =
+            activeFilter === "all" ||
+            categories.includes(activeFilter);
+
+        const searchMatch = name.includes(searchText);
+
+        card.hidden = !(categoryMatch && searchMatch);
+
+    });
+
+    const visibleCards = [...drinkCards].some(card => !card.hidden);
+
+    let message = document.getElementById("emptyMessage");
+
+    if (!visibleCards && !message) {
+        message = document.createElement("p");
+        message.id = "emptyMessage";
+        message.className = "empty-message";
+        message.textContent = "No drinks found. Try another search.";
+        document.getElementById("drinkGrid").appendChild(message);
+    }
+
+    if (visibleCards && message) {
+        message.remove();
+    }
+}
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        activeFilter = button.dataset.filter;
+
+        filterCards();
+
+    });
+
+});
+
+searchInput.addEventListener("input", filterCards);
+
+
+// SHOPPING CART
+
+let cart = [];
+
+function addToCart(name, price) {
+
+    const existing = cart.find(item => item.name === name);
+
+    if (existing) {
+        existing.quantity++;
+    } else {
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
+
+    updateCart();
+}
+
+function updateCart() {
+
+    const cartItems = document.getElementById("cartItems");
+
+    let total = 0;
+    let count = 0;
+
+    cartItems.innerHTML = "";
+
+    cart.forEach((item, index) => {
+
+        total += item.price * item.quantity;
+        count += item.quantity;
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+
+                <strong>${item.name}</strong>
+
+                <div>
+                    <button onclick="changeQuantity(${index}, -1)">−</button>
+
+                    ${item.quantity}
+
+                    <button onclick="changeQuantity(${index}, 1)">+</button>
+                </div>
+
+                <strong>Rs. ${item.price * item.quantity}</strong>
+
+            </div>
+        `;
+
+    });
+
+    if (cart.length === 0) {
+        cartItems.textContent = "Your cart is empty.";
+    }
+
+    document.getElementById("cartCount").innerText =
+        `${count} items · Rs. ${total.toLocaleString("en-PK")}`;
+
+    document.getElementById("cartTotal").innerText =
+        "Rs. " + total.toLocaleString("en-PK");
+
+}
+
+function changeQuantity(index, amount) {
+
+    cart[index].quantity += amount;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    updateCart();
+}
+
+
+// OPEN / CLOSE CART
+
+function toggleCart() {
+
+    const panel = document.getElementById("cartPanel");
+
+    panel.style.display =
+        panel.style.display === "block" ? "none" : "block";
+
+}
+
+
+// CHECKOUT
+
+function checkout() {
+
+    if (cart.length === 0) {
+        alert("Your cart is empty! Please add a drink.");
+        return;
+    }
+
+    let total = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+    );
+
+    alert(
+        "Thank you for choosing Lovora Coffee! ❤️\n\n" +
+        "Your order total is Rs. " +
+        total.toLocaleString("en-PK") +
+        "\n\nOnline checkout will be available soon."
+    );
+
+}
+
+
+// YEAR
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// FOOTER DRINK LINKS
+
+document.querySelectorAll("[data-go]").forEach(link => {
+
+    link.addEventListener("click", e => {
+
+        e.preventDefault();
+
+        document
+            .querySelector('.filter[data-filter="' + link.dataset.go + '"]')
+            .click();
+
+        document
+            .querySelector(".menu-container")
+            .scrollIntoView({ behavior: "smooth" });
+
+    });
+
+});
+
+// HIDE NAVBAR ON SCROLL DOWN
+
+const siteHeader = document.querySelector(".site-header");
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+
+    const currentY = window.scrollY;
+
+    if (currentY > lastScrollY && currentY > 100) {
+        siteHeader.classList.add("hide");
+    } else {
+        siteHeader.classList.remove("hide");
+    }
+
+    lastScrollY = currentY;
+
+}, { passive: true });
+
+
+updateCart();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lovora | Flavors</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --forest: #0f3d2e;
+  --green: #166534;
+  --sage: #4c956c;
+  --mint: #88d5ba;
+  --mist: #e6f2ea;
+  --paper: #f9fcf8;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--forest);
+  font-family: var(--sans);
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* NAVBAR */
+
+nav {
+  height: 64px;
+  background: var(--forest);
+  color: var(--paper);
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo { font: 700 1.3rem var(--serif); }
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  font-size: .9rem;
+}
+
+nav a:hover { color: var(--mint); }
+
+.navbtn {
+  background: var(--paper);
+  color: var(--forest);
+  padding: 6px 10px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 48px 20px 34px;
+}
+
+.eyebrow {
+  color: var(--sage);
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font: 600 clamp(1.9rem, 3.6vw, 2.8rem)/1.15 var(--serif);
+  margin: 10px 0;
+}
+
+.hero h1 em { color: var(--sage); }
+
+.hero p {
+  max-width: 440px;
+  margin: auto;
+  line-height: 1.65;
+  font-size: .95rem;
+  color: #5b7166;
+}
+
+/* FLAVORS */
+
+main {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 4% 80px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.heading h2 { font: 600 1.55rem var(--serif); }
+
+.heading p {
+  color: #6a8175;
+  font-size: .9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.card {
+  border-radius: 22px;
+  padding: 20px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 32px #0f3d2e18;
+}
+
+.card:nth-child(1) { background: #e6f2ea; }
+.card:nth-child(2) { background: #dceee4; }
+.card:nth-child(3) { background: #f2e7d8; }
+.card:nth-child(4) { background: #dce8df; }
+
+.tag {
+  display: inline-block;
+  background: #ffffffa6;
+  border-radius: 30px;
+  padding: 7px 10px;
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+}
+
+/* CUP IMAGE */
+
+.photo {
+  height: 225px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  margin: 8px -8px;
+}
+
+.photo::before {
+  content: "";
+  position: absolute;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background: #ffffff70;
+  transition: transform .35s;
+}
+
+.card:hover .photo::before { transform: scale(1.08); }
+
+.photo img {
+  position: relative;
+  width: 205px;
+  height: 225px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 12px #0f3d2e20);
+  transition: transform .4s;
+}
+
+.card:hover img { transform: translateY(-5px) scale(1.04); }
+
+/* PRODUCT DETAILS */
+
+h3 {
+  font: 600 1.15rem var(--serif);
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-size: .85rem;
+  line-height: 1.55;
+  color: #526b5f;
+  min-height: 52px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.price { font: 600 1.05rem var(--serif); }
+
+button {
+  border: 0;
+  border-radius: 30px;
+  background: var(--forest);
+  color: white;
+  padding: 9px 14px;
+  font: 600 .8rem var(--sans);
+  cursor: pointer;
+  transition: .25s;
+}
+
+button:hover {
+  background: var(--sage);
+  transform: translateY(-2px);
+}
+
+.note {
+  font-size: .7rem;
+  color: #6a8175;
+  margin-top: 9px;
+}
+
+/* BOTTOM BANNER */
+
+.banner {
+  margin: 0 4% 70px;
+  background: var(--forest);
+  color: white;
+  padding: 28px 5%;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.banner h2 {
+  font: 600 clamp(1.3rem, 2.6vw, 1.8rem) var(--serif);
+  margin-bottom: 8px;
+}
+
+.banner p { color: #c8dfd2; }
+
+.banner a {
+  background: var(--mint);
+  color: var(--forest);
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--mist);
+  padding: 25px 5%;
+  display: flex;
+  justify-content: space-between;
+  color: #60776b;
+  font-size: .82rem;
+}
+
+/* ANIMATION */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 1000px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 650px) {
+  nav { height: 68px; }
+  nav ul { display: none; }
+  .hero { padding: 50px 20px; }
+  .heading { display: block; }
+  .heading p { margin-top: 8px; }
+  .grid { grid-template-columns: 1fr; }
+  .banner { display: block; text-align: center; }
+  .banner a { display: inline-block; margin-top: 18px; }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+  <a class="logo" href="loader.html">Lovora
+    
+  </a>
+
+  <ul>
+    <li><a href="loader.html">Home</a></li>
+    <li><a href="flavors.html">Flavors</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="our-story.html">Our story</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+  <a class="navbtn" href="#flavors">Explore flavors</a>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+  <span class="eyebrow">Flavors</span>
+
+  <h1>Our <em>flavors</em></h1>
+
+  <p>
+    Four drinks we make every day. Pick one, or try them all.
+  </p>
+</header>
+
+<!-- FLAVORS SECTION -->
+
+<main class="reveal" id="flavors">
+
+  <div class="heading">
+    <div>
+      <h2>All flavors</h2>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- MATCHA -->
+
+    <article class="card">
+      <span class="tag">Fresh & creamy</span>
+
+      <div class="photo">
+        <img src="lovora-cups/lovora-matcha.png" alt="Matcha Frappe">
+      </div>
+
+      <h3>Matcha Frappe</h3>
+
+      <p class="desc">
+        Earthy matcha blended with chilled milk
+        and a soft vanilla finish.
+      </p>
+
+      <div class="bottom">
+        <span class="price">Rs. 850</span>
+        <button onclick="add('Matcha Frappe')">Add to order +</button>
+      </div>
+
+      <p class="note">Smooth · Refreshing · Lightly sweet</p>
+    </article>
+
+    <!-- MINT MOCHA -->
+
+    <article class="card">
+      <span class="tag">Cool & chocolatey</span>
+
+      <div class="photo">
+        <img src="lovora-cups/lovora-mint-mocha.png" alt="Mint Mocha">
+      </div>
+
+      <h3>Mint Mocha</h3>
+
+      <p class="desc">
+        Bold espresso meets dark chocolate
+        with a refreshing hint of mint.
+      </p>
+
+      <div class="bottom">
+        <span class="price">Rs. 900</span>
+        <button onclick="add('Mint Mocha')">Add to order +</button>
+      </div>
+
+      <p class="note">Rich · Cool mint · Espresso</p>
+    </article>
+
+    <!-- CARAMEL CLOUD -->
+
+    <article class="card">
+      <span class="tag">Sweet & indulgent</span>
+
+      <div class="photo">
+        <img src="lovora-cups/lovora-caramel-cloud.png" alt="Caramel Cloud">
+      </div>
+
+      <h3>Caramel Cloud</h3>
+
+      <p class="desc">
+        Roasted coffee, buttery salted caramel,
+        and whipped cream on top.
+      </p>
+
+      <div class="bottom">
+        <span class="price">Rs. 950</span>
+        <button onclick="add('Caramel Cloud')">Add to order +</button>
+      </div>
+
+      <p class="note">Caramel · Creamy · Comforting</p>
+    </article>
+
+    <!-- COLD BREW -->
+
+    <article class="card">
+      <span class="tag">Deep & mellow</span>
+
+      <div class="photo">
+        <img src="lovora-cups/lovora-cold-brew.png" alt="Cold Brew Cream">
+      </div>
+
+      <h3>Cold Brew Cream</h3>
+
+      <p class="desc">
+        Slow-steeped coffee with a silky sweet cream
+        layer and mellow finish.
+      </p>
+
+      <div class="bottom">
+        <span class="price">Rs. 800</span>
+        <button onclick="add('Cold Brew Cream')">Add to order +</button>
+      </div>
+
+      <p class="note">Slow brewed · Silky · Balanced</p>
+    </article>
+
+  </div>
+</main>
+
+<!-- CTA -->
+
+<section class="banner reveal">
+  <div>
+    <h2>Ready to order?</h2>
+    <p>Pick a flavor and add it to your order.</p>
+  </div>
+
+  <a href="loader.html#order">Order your cup</a>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <strong>Lovora Coffee</strong>
+  <span>© 2026 Lovora</span>
+</footer>
+
+<script>
+function add(flavor) {
+  alert(flavor + ' added to your order! (Demo button)');
+}
+
+const items = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  items.forEach(item => obs.observe(item));
+} else {
+  items.forEach(item => item.classList.add('visible'));
+}
+</script>
+
+</body>
+</html>

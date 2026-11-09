@@ -1,0 +1,1148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Get in touch with Lovora Coffee. Send us a message, order your favorite drink or visit our coffee shop.">
+
+<title>Contact Us | Lovora Coffee</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+:root {
+    --dark: #0f3d2e;
+    --primary: #166534;
+    --sage: #4c956c;
+    --mint: #88d5ba;
+    --light: #e6f2ea;
+    --background: #f9fcf8;
+    --text: #263b30;
+    --muted: #718078;
+    --border: #dce8df;
+    --white: #ffffff;
+
+    --heading: 'Playfair Display', serif;
+    --body: 'DM Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body);
+    background: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    width: min(1180px, 88%);
+    margin: auto;
+}
+
+/* HEADER */
+
+header {
+    background: var(--dark);
+    color: white;
+    height: 64px;
+}
+
+.navbar {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding-bottom: 10px;
+}
+.logo
+{
+   font-family: 'Fraunces', serif;
+  font-weight: 700; /* Bold */}
+/* .logo {
+    color: white;
+    font-family: var(--heading);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+} */
+
+/* .logo small {
+    display: block;
+    text-align: center;
+    font-family: var(--body);
+    font-size: 9px;
+    letter-spacing: 5px;
+    margin-top: 5px;
+} */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+nav a {
+    font-size: 13px;
+    color: rgba(255,255,255,.85);
+    transition: .3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--mint);
+}
+
+.order-btn {
+    background: white;
+    color: var(--dark);
+    padding: 12px 22px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+    border-radius: 30px;
+}
+
+.order-btn:hover {
+    background: var(--mint);
+
+}
+
+/* HERO */
+
+.hero {
+    background: var(--light);
+    text-align: center;
+    padding: 95px 20px 105px;
+}
+
+.eyebrow {
+    color: var(--sage);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    font-family: var(--heading);
+    font-weight: 500;
+    font-size: clamp(45px, 7vw, 75px);
+    letter-spacing: -2px;
+    line-height: 1.15;
+    color: var(--dark);
+    margin: 22px 0;
+}
+
+.hero h1 em {
+    color: var(--sage);
+}
+
+.hero p {
+    max-width: 570px;
+    margin: auto;
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+/* CONTACT SECTION */
+
+.contact-section {
+    padding: 105px 0;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 75px;
+    align-items: start;
+}
+
+/* LEFT INFORMATION */
+
+.contact-info {
+    padding-top: 12px;
+}
+
+.contact-info h2 {
+    font-family: var(--heading);
+    font-weight: 500;
+    font-size: clamp(36px, 4vw, 49px);
+    color: var(--dark);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.contact-info > p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 35px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.info-item h4 {
+    color: var(--dark);
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.info-item p,
+.info-item a {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    word-break: break-word;
+}
+
+.info-item a:hover {
+    color: var(--primary);
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    transition: .3s;
+}
+
+.social-links a:hover {
+    background: var(--dark);
+    color: white;
+    border-color: var(--dark);
+}
+
+/* FORM */
+
+.contact-form {
+    background: white;
+    padding: 45px;
+    border: 1px solid var(--border);
+}
+
+.form-heading {
+    margin-bottom: 30px;
+}
+
+.form-heading h3 {
+    font-family: var(--heading);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.form-heading p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 21px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--dark);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    background: var(--background);
+    padding: 14px 15px;
+    color: var(--dark);
+    outline: none;
+    font-size: 13px;
+    transition: border-color .25s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--sage);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0aaa3;
+}
+
+.form-group textarea {
+    height: 140px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+/* SEND OPTIONS */
+
+.send-heading {
+    color: var(--dark);
+    font-size: 12px;
+    font-weight: 700;
+    margin: 8px 0 14px;
+}
+
+.send-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.send-btn {
+    border: none;
+    padding: 15px 12px;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: .25s;
+}
+
+.send-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(.92);
+}
+
+.email-btn {
+    background: var(--dark);
+}
+
+.whatsapp-btn {
+    background: #238c50;
+}
+
+.send-btn i {
+    font-size: 17px;
+}
+
+.form-note {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 17px;
+    line-height: 1.7;
+}
+
+#formStatus {
+    margin-top: 15px;
+    font-size: 12px;
+    color: var(--primary);
+    line-height: 1.6;
+}
+
+/* LOCATION */
+
+.location-section {
+    background: var(--light);
+    padding: 90px 0;
+}
+
+.location-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.location-heading h2 {
+    font-family: var(--heading);
+    font-size: clamp(35px, 5vw, 48px);
+    font-weight: 500;
+    color: var(--dark);
+    margin: 17px 0 12px;
+}
+
+.location-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+    background: #dce8df;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.map-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 25px;
+}
+
+.map-bottom h3 {
+    font-family: var(--heading);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 7px;
+}
+
+.map-bottom p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.direction-btn {
+    background: var(--dark);
+    color: white;
+    padding: 14px 23px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+    white-space: nowrap;
+}
+
+.direction-btn:hover {
+    background: var(--primary);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 18px 0;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-brand {
+    font-family: var(--heading);
+    font-size: 13px;
+}
+
+.footer-inner p {
+    color: rgba(255,255,255,.65);
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-info {
+        max-width: 650px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+@media(max-width: 650px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        padding: 20px 0;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .hero {
+        padding: 75px 20px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .contact-section {
+        padding: 70px 0;
+    }
+
+    .contact-form {
+        padding: 27px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-heading h3 {
+        font-size: 29px;
+    }
+
+    .send-options {
+        grid-template-columns: 1fr;
+    }
+
+    .location-section {
+        padding: 70px 0;
+    }
+
+    .map-wrapper {
+        height: 300px;
+    }
+
+    .map-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media(max-width: 360px) {
+    nav {
+        justify-content: flex-start;
+        column-gap: 17px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="loader.html" class="logo">
+            LOVORA
+            <!-- <small>COFFEE</small> -->
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="loader.html">Home</a>
+            <a href="flavors.html">Flavors</a>
+            <a href="menu.html">Menu</a>
+            <a href="our-story.html">Our Story</a>
+            <a href="contact.html" class="active" aria-current="page">Contact</a>
+        </nav>
+
+        <a href="menu.html" class="order-btn">
+            Order Now
+        </a>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <span class="eyebrow">WE'D LOVE TO HEAR FROM YOU</span>
+
+    <h1>
+        Let's Start a
+        <br>
+        <em>Lovely Conversation.</em>
+    </h1>
+
+    <p>
+        Have a question, an idea or simply want to say hello?
+        We're always happy to hear from you.
+        Send us a message and let's connect.
+    </p>
+
+</section>
+
+
+<!-- CONTACT INFORMATION AND FORM -->
+
+<section class="contact-section">
+
+    <div class="container contact-layout">
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <span class="eyebrow">GET IN TOUCH</span>
+
+            <h2>
+                A Little Hello
+                Goes a Long Way.
+            </h2>
+
+            <p>
+                Whether you're curious about our drinks,
+                need help with an order or just want to
+                connect, we're here for you.
+            </p>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div>
+                    <h4>Email Us</h4>
+                    <a href="mailto:hello@lovoracoffee.com">
+                        hello@lovoracoffee.com
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+
+                <div>
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/923189603070"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                       +92 318 9603070
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                    <h4>Visit Our Coffee Shop</h4>
+                    <p>
+                        F-7 Markaz, Islamabad, Pakistan
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="info-item">
+
+                <div class="info-icon">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+
+                <div>
+                    <h4>Opening Hours</h4>
+                    <p>
+                        Monday – Sunday<br>
+                        10:00 AM – 11:00 PM
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="social-links">
+
+                <a href="https://instagram.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://facebook.com/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://wa.me/923189603070"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form">
+
+            <div class="form-heading">
+
+                <span class="eyebrow">SEND US A MESSAGE</span>
+
+                <h3>How Can We Help?</h3>
+
+                <p>
+                    Fill in your details and choose how
+                    you'd like to send your message.
+                </p>
+
+            </div>
+
+
+            <form id="contactForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="name">Your Name *</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            maxlength="100"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">Phone Number *</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+92 3XX XXXXXXX"
+                            autocomplete="tel"
+                            maxlength="20"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">Email Address *</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="yourname@example.com"
+                        autocomplete="email"
+                        maxlength="150"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">Your Message *</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us what you have in mind..."
+                        maxlength="3000"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <p class="send-heading">
+                    CHOOSE HOW TO SEND YOUR MESSAGE
+                </p>
+
+
+                <div class="send-options">
+
+                    <button
+                        type="button"
+                        class="send-btn email-btn"
+                        id="emailButton"
+                    >
+                        <i class="fa-solid fa-envelope"></i>
+                        Send via Email
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="send-btn whatsapp-btn"
+                        id="whatsappButton"
+                    >
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Send via WhatsApp
+                    </button>
+
+                </div>
+
+
+                <p class="form-note">
+                    Your details will be included in the message
+                    so our team can get back to you.
+                </p>
+
+                <p id="formStatus" role="status" aria-live="polite"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="location-section">
+
+    <div class="container">
+
+        <div class="location-heading">
+
+            <span class="eyebrow">COME SAY HELLO</span>
+
+            <h2>Find Your Way to Lovora.</h2>
+
+            <p>
+                We'd love to welcome you for your next
+                favorite coffee.
+            </p>
+
+        </div>
+
+
+        <div class="map-wrapper">
+
+            <iframe
+                src="https://www.google.com/maps?q=F-7+Markaz,+Islamabad,+Pakistan&output=embed"
+                title="Lovora Coffee demo location map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+            ></iframe>
+
+        </div>
+
+
+        <div class="map-bottom">
+
+            <div>
+
+                <h3>Lovora Coffee</h3>
+
+                <p>
+                    F-7 Markaz, Islamabad, Pakistan
+                </p>
+
+            </div>
+
+            <a
+                class="direction-btn"
+                href="https://www.google.com/maps/search/?api=1&query=F-7+Markaz+Islamabad+Pakistan"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-solid fa-location-arrow"></i>
+                Get Directions
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <strong class="footer-brand">
+            LOVORA 
+        </strong>
+
+        <p>
+            Little moments. Lovely sips.
+        </p>
+
+        <p>
+            © 2026 Lovora Coffee. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- CONTACT FORM FUNCTIONALITY -->
+
+<script>
+
+const WHATSAPP_NUMBER = "+92 318 9603070";
+const BUSINESS_EMAIL = "hello@lovoracoffee.com";
+
+const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
+
+const emailButton = document.getElementById("emailButton");
+const whatsappButton = document.getElementById("whatsappButton");
+
+
+function getCustomerMessage() {
+
+    if (!form.reportValidity()) {
+        return null;
+    }
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !phone || !email || !message) {
+        status.textContent = "Please complete all required fields.";
+        return null;
+    }
+
+    return {
+        name,
+        phone,
+        email,
+        message
+    };
+
+}
+
+
+// SEND VIA EMAIL
+
+emailButton.addEventListener("click", function () {
+
+    const customer = getCustomerMessage();
+
+    if (!customer) return;
+
+    const subject = `Lovora Coffee Inquiry - ${customer.name}`;
+
+    const body = `
+Hello Lovora Coffee Team,
+
+I would like to contact you.
+
+Customer Details:
+
+Name: ${customer.name}
+Phone: ${customer.phone}
+Email: ${customer.email}
+
+Message:
+
+${customer.message}
+
+Thank you.
+`;
+
+    const mailtoLink =
+        `mailto:${BUSINESS_EMAIL}` +
+        `?subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+
+    status.textContent =
+        "Opening your email application. Please review and send your message.";
+
+    window.location.href = mailtoLink;
+
+});
+
+
+// SEND VIA WHATSAPP
+
+whatsappButton.addEventListener("click", function () {
+
+    const customer = getCustomerMessage();
+
+    if (!customer) return;
+
+    const whatsappMessage = `
+Hello Lovora Coffee! ☕
+
+I would like to contact you.
+
+*Customer Details*
+
+Name: ${customer.name}
+Phone: ${customer.phone}
+Email: ${customer.email}
+
+*My Message:*
+
+${customer.message}
+
+Thank you! ❤️
+`;
+
+    const whatsappURL =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=` +
+        encodeURIComponent(whatsappMessage);
+
+    status.textContent =
+        "Opening WhatsApp. Please review and send your message.";
+
+    window.open(
+        whatsappURL,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+});
+
+</script>
+
+</body>
+</html>
